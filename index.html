@@ -109,6 +109,44 @@ mobileNavToggle.addEventListener('click', () => {
   mobileNavToggle.setAttribute('aria-expanded', isExpanded);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('.video-container video');
+
+    if (video) {
+        // Attempt to play it initially (for browsers that allow muted autoplay)
+        let playPromise = video.play();
+
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // Autoplay started successfully
+                console.log("Video autoplay started");
+            }).catch(error => {
+                // Autoplay was prevented.
+                console.warn("Video autoplay was prevented. Error: ", error);
+                // We can now try to play it on the first user interaction
+                // Or show a play button.
+
+                // Example: Play on first touch/click anywhere on the body
+                // This is a common workaround but ensure it's not intrusive.
+                // You might prefer a dedicated "Play" button if this doesn't work well.
+                const playOnInteraction = () => {
+                    video.play().then(() => {
+                        console.log("Video played after user interaction.");
+                        document.body.removeEventListener('touchstart', playOnInteraction);
+                        document.body.removeEventListener('click', playOnInteraction);
+                    }).catch(err => {
+                        console.error("Failed to play video even after interaction: ", err);
+                    });
+                };
+
+                document.body.addEventListener('touchstart', playOnInteraction, { once: true });
+                document.body.addEventListener('click', playOnInteraction, { once: true });
+            });
+        }
+    }
+});
+
+	
 	</script>
 	
 	
