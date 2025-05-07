@@ -311,22 +311,55 @@ body {
   }
 }
 
-/* Styles for the "About Us" Section */
 .aboutus {
-    border: 0px solid #000000; /* No visible border, can be removed */
+    border: 0px solid #000000; /* No visible border, can be removed if not needed */
     padding: 40px 20px; /* Space inside the section */
     text-align: center; /* Centers the text content */
     max-width: 1200px;  /* Limits the width of the section */
     margin: 20px auto;  /* Centers the section on the page, adds top/bottom space */
     background-color: #ffffff; /* White background */
-	font-size: 18px; /* Default text size */
+	font-size: 18px; /* Default text size for paragraph content */
+	line-height: 1.7; /* Added for better readability */
 	border-bottom: 2px solid #000000; /* Black line at the bottom */
 }
 
 /* Header for the "About Us" section */
 .aboutus-header {
     margin-bottom: 40px; /* Space below the header */
-	font-size: 36px; /* Header text size */
+	font-size: 36px; /* Header text size for desktop */
+    font-family: "Menda Bold", sans-serif; /* Ensure consistent font with other headers */
+}
+
+/* --- Mobile Adaptations for About Us --- */
+
+/* For tablets and larger mobile phones */
+@media (max-width: 768px) {
+    .aboutus {
+        padding: 30px 15px; /* Reduce padding */
+        font-size: 17px;   /* Slightly smaller paragraph text */
+        margin-top: 30px;  /* Adjust top margin if needed */
+        margin-bottom: 30px; /* Adjust bottom margin if needed */
+    }
+
+    .aboutus-header {
+        font-size: 30px;   /* Smaller header text */
+        margin-bottom: 30px; /* Reduce space below header */
+    }
+}
+
+/* For smaller mobile phones */
+@media (max-width: 480px) {
+    .aboutus {
+        padding: 25px 10px; /* Further reduce padding */
+        font-size: 16px;   /* Standard mobile paragraph text size */
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .aboutus-header {
+        font-size: 24px;   /* Even smaller header for mobile */
+        margin-bottom: 25px; /* Further reduce space below header */
+    }
 }
 
 
