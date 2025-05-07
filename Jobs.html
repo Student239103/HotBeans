@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Courses</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Logo.svg" class="logo-img" alt="Hot Beans Web Logo">
+            </a>
+        </div>
+      
+        <nav class="nav-links">
+          <a href="Jobs.html">Jobs</a>
+          <a href="Trainee.html">Our Trainees</a>
+          <a href="ApplicationForm.html">Application form</a>
+          <a href="Courses.html">Courses</a>
+        </nav>
+      
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      
+      </header>
+
+
+      <section class="jobs-section">
+        <h1 class="jobs-main-header">Join Our Team</h1>
+      
+        <div class="job-cards-container">
+      
+          <!-- Job Card 1: Frontend Developer -->
+          <div class="job-card">
+            <h2 class="job-title">Frontend Developer</h2>
+            <div class="job-details">
+              <h3 class="job-section-title">Job Description</h3>
+              <p class="job-description-text">
+                We are seeking a passionate Frontend Developer to create engaging and user-friendly web interfaces. You will collaborate with designers and backend developers to bring creative concepts to life, ensuring high performance and responsiveness across all devices.
+              </p>
+            </div>
+            <div class="job-requirements">
+              <h3 class="job-section-title">Requirements</h3>
+              <ul class="job-requirements-list">
+                <li>Proficiency in HTML, CSS, and JavaScript.</li>
+                <li>Experience with modern JavaScript frameworks (e.g., React, Vue, or Angular).</li>
+                <li>Understanding of responsive design principles.</li>
+                <li>Familiarity with version control systems (e.g., Git).</li>
+                <li>Strong problem-solving skills and attention to detail.</li>
+              </ul>
+            </div>
+            <a href="ApplicationForm.html"><button class="job-apply-button">Apply Now</button></a>
+          </div>
+      
+          <!-- Job Card 2: Backend Developer -->
+          <div class="job-card">
+            <h2 class="job-title">Backend Developer</h2>
+            <div class="job-details">
+              <h3 class="job-section-title">Job Description</h3>
+              <p class="job-description-text">
+                Join our team as a Backend Developer responsible for designing, building, and maintaining the server-side logic of our web applications. You will work on database management, API development, and ensuring the scalability and security of our platform.
+              </p>
+            </div>
+            <div class="job-requirements">
+              <h3 class="job-section-title">Requirements</h3>
+              <ul class="job-requirements-list">
+                <li>Strong experience with server-side languages (e.g., Node.js, Python, Ruby, or Java).</li>
+                <li>Knowledge of database technologies (SQL and/or NoSQL).</li>
+                <li>Experience building and consuming RESTful APIs.</li>
+                <li>Understanding of server architecture and cloud platforms.</li>
+                <li>Ability to write clean, maintainable, and testable code.</li>
+              </ul>
+            </div>
+            <a href="ApplicationForm.html"><button class="job-apply-button">Apply Now</button></a>
+          </div>
+      
+          <!-- Job Card 3: Full-Stack Developer -->
+          <div class="job-card">
+            <h2 class="job-title">Full-Stack Developer</h2>
+            <div class="job-details">
+              <h3 class="job-section-title">Job Description</h3>
+              <p class="job-description-text">
+                We're looking for a versatile Full-Stack Developer to work on both frontend and backend aspects of our projects. You will be involved in the entire development lifecycle, from concept and design to deployment and maintenance, contributing to all layers of our applications.
+              </p>
+            </div>
+            <div class="job-requirements">
+              <h3 class="job-section-title">Requirements</h3>
+              <ul class="job-requirements-list">
+                <li>Proven experience as a Full-Stack Developer or similar role.</li>
+                <li>Expertise in both frontend (HTML, CSS, JS, frameworks) and backend technologies.</li>
+                <li>Familiarity with databases, web servers, and UI/UX design.</li>
+                <li>Excellent communication and teamwork skills.</li>
+                <li>A knack for visual design and utility.</li>
+              </ul>
+            </div>
+            <a href="ApplicationForm.html"><button class="job-apply-button">Apply Now</button></a>
+          </div>
+      
+        </div>
+      </section>
+
+
+      <footer class="site-footer">
+        <div class="footer-container">
+          
+          <div class="footer-column">
+            <a href="Jobs.html">Jobs</a>
+            <a href="Trainee.html">Our Trainee</a>
+          </div>
+      
+          <div class="footer-column">
+            <a href="ApplicationForm.html">Application Form</a>
+            <a href="Courses.html">Courses</a>
+          </div>
+      
+          <div class="footer-column footer-contact-info">
+            <p><strong>Address</strong></p>
+            <p>+44 1234 56789</p>
+          </div>
+      
+        </div>
+      </footer>
+
+      <script>
+
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const header = document.querySelector('.header');
+
+mobileNavToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  header.classList.toggle('mobile-nav-active');
+
+  const isExpanded = navLinks.classList.contains('active');
+  mobileNavToggle.setAttribute('aria-expanded', isExpanded);
+});
+
+      </script>
+
+</body>
+</html>

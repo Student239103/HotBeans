@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Homepage</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+	  <a href="index.html">
+		  <img src="images/Logo.svg" class="logo-img" alt="Hot Beans Web Logo">
+	  </a>
+  </div>
+
+  <nav class="nav-links">
+    <a href="Jobs.html">Jobs</a>
+    <a href="Trainee.html">Our Trainees</a>
+    <a href="ApplicationForm.html">Application form</a>
+    <a href="Courses.html">Courses</a>
+  </nav>
+
+  <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </button>
+
+</header>
+
+<section class="video-container">
+ <video autoplay muted loop>
+	<source src="images/hpvideo.mp4" type="video/mp4">
+	</video>
+ <div class="slogan">
+	Launch Your Web <br>Development Career <br> with Hot Beans Web
+</div>
+ <a href="Jobs.html"><button class= "btn_main">See opportunites</button></a>
+</section>
+	
+<section class="aboutus">
+	<div>
+    <h1 class="aboutus-header">About Us</h1>
+  </div>
+	At Hot Beans Web, we believe in turning talent into expertise. As a growing web development company, we are passionate about nurturing new talent and building the next generation of skilled web developers. We provide real-world experience, professional development, and a supportive team environment where your skills can thrive. Whether you're fresh from a course or have recently completed your qualifications, Hot Beans Web offers you the perfect opportunity to launch your career and grow alongside a dynamic and forward-thinking company.
+	</section>
+	
+<section class="hmtrainee_section">
+        <h1 class="trainee-header">Our Trainees</h1>  
+        <div class="image-gallery">
+			<div class="item">	
+            <img src="images/trainee1.jpg" alt="Man in dark suit with red tie, arms crossed">
+				<p>Kobi Duffy</p>
+			</div>
+			<div class="item">
+            <img src="images/trainee2.jpg" alt="Man in purple jacket leaning against pillar">
+				<p>Kaan Wong</p>
+			</div>
+			<div class="item">
+            <img src="images/trainee3.jpg" alt="Woman in grey jacket holding laptop, sitting by window">
+				<p>Lana Jimenez</p>
+            </div>
+			
+			
+        </div>
+	 
+        <a href="Trainee.html"><button class="btn_2">More</button></a>
+    </section>	
+	
+	
+    
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <div class="footer-column">
+      <a href="Jobs.html">Jobs</a>
+      <a href="Trainee.html">Our Trainee</a>
+    </div>
+
+    <div class="footer-column">
+      <a href="ApplicationForm.html">Application Form</a>
+      <a href="Courses.html">Courses</a>
+    </div>
+
+    <div class="footer-column footer-contact-info">
+      <p><strong>Address</strong></p>
+      <p>+44 1234 56789</p>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+<script>
+	
+	const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const header = document.querySelector('.header');
+
+mobileNavToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  header.classList.toggle('mobile-nav-active');
+
+  const isExpanded = navLinks.classList.contains('active');
+  mobileNavToggle.setAttribute('aria-expanded', isExpanded);
+});
+
+	</script>
+	
+	
+	
+</body>
+</html>

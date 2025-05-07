@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Courses</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/Logo.svg" class="logo-img" alt="Hot Beans Web Logo">
+            </a>
+        </div>
+      
+        <nav class="nav-links">
+          <a href="Jobs.html">Jobs</a>
+          <a href="Trainee.html">Our Trainees</a>
+          <a href="ApplicationForm.html">Application form</a>
+          <a href="Courses.html">Courses</a>
+        </nav>
+      
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+      
+      </header>
+
+      <section class="courses-overview-section">
+        <h1 class="courses-main-header">Our Programming Courses</h1>
+      
+        <!-- Course 1: JavaScript -->
+        <div class="course-item">
+          <h2 class="course-item-title">JavaScript Tutorials</h2>
+          <div class="course-item-image-slider-container">
+            <div class="course-item-image-slides">
+              <img src="images/js1.png" alt="JavaScript Logo" class="course-image-slide active-image">
+              <img src="images/js2.jpg" alt="JavaScript Code Example" class="course-image-slide">
+            </div>
+            <button class="image-slider-nav image-prev" aria-label="Previous image">❮</button>
+            <button class="image-slider-nav image-next" aria-label="Next image">❯</button>
+          </div>
+          <p class="course-item-description">
+            Master the fundamentals and advanced concepts of JavaScript, the language of the web.
+          </p>
+          <a href="https://javascript.info/"><button class="course-item-button">View Course Details</button></a>
+        </div>
+      
+        <!-- Course 2: HTML & CSS -->
+        <div class="course-item">
+          <h2 class="course-item-title">HTML & CSS Tutorials</h2>
+          <div class="course-item-image-slider-container">
+            <div class="course-item-image-slides">
+              <img src="images/html1.png" alt="HTML5 Logo" class="course-image-slide active-image">
+              <img src="images/html2.jpg" alt="CSS3 Logo" class="course-image-slide">
+            </div>
+            <button class="image-slider-nav image-prev" aria-label="Previous image">❮</button>
+            <button class="image-slider-nav image-next" aria-label="Next image">❯</button>
+          </div>
+          <p class="course-item-description">
+            Learn to build beautiful and responsive web pages with modern HTML5 and CSS3 techniques.
+          </p>
+          <a href="https://www.freecodecamp.org/learn/responsive-web-design/"><button class="course-item-button">View Course Details</button></a>
+        </div>
+      
+        <!-- Course 3: React -->
+        <div class="course-item">
+          <h2 class="course-item-title">React Tutorials</h2>
+          <div class="course-item-image-slider-container">
+            <div class="course-item-image-slides">
+              <img src="images/react1.jpg" alt="React Logo" class="course-image-slide active-image">
+              <img src="images/react2.jpg" alt="React Component Example" class="course-image-slide">
+            </div>
+            <button class="image-slider-nav image-prev" aria-label="Previous image">❮</button>
+            <button class="image-slider-nav image-next" aria-label="Next image">❯</button>
+          </div>
+          <p class="course-item-description">
+            Dive into React, the popular JavaScript library for building dynamic user interfaces.
+          </p>
+          <a href="https://react.dev/learn"><button class="course-item-button">View Course Details</button></a>
+        </div>
+      
+      </section>
+    
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <div class="footer-column">
+      <a href="Jobs.html">Jobs</a>
+      <a href="Trainee.html">Our Trainee</a>
+    </div>
+
+    <div class="footer-column">
+      <a href="ApplicationForm.html">Application Form</a>
+      <a href="Courses.html">Courses</a>
+    </div>
+
+    <div class="footer-column footer-contact-info">
+      <p><strong>Address</strong></p>
+      <p>+44 1234 56789</p>
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  const courseItems = document.querySelectorAll('.course-item');
+
+  courseItems.forEach(courseItem => {
+    const imageSlides = courseItem.querySelectorAll('.course-image-slide');
+    const prevButton = courseItem.querySelector('.image-prev');
+    const nextButton = courseItem.querySelector('.image-next');
+    let currentImageIndex = 0;
+
+    function showImageSlide(index) {
+      imageSlides.forEach((slide, i) => {
+        slide.classList.remove('active-image');
+        if (i === index) {
+          slide.classList.add('active-image');
+        }
+      });
+    }
+
+    // Check if navigation buttons exist before adding listeners
+    if (prevButton && nextButton) {
+      prevButton.addEventListener('click', function () {
+        currentImageIndex--;
+        if (currentImageIndex < 0) {
+          currentImageIndex = imageSlides.length - 1;
+        }
+        showImageSlide(currentImageIndex);
+      });
+
+      nextButton.addEventListener('click', function () {
+        currentImageIndex++;
+        if (currentImageIndex >= imageSlides.length) {
+          currentImageIndex = 0;
+        }
+        showImageSlide(currentImageIndex);
+      });
+    }
+
+    // Initialize the first image for this item
+    if (imageSlides.length > 0) {
+        showImageSlide(currentImageIndex);
+    }
+  });
+});
+
+const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const header = document.querySelector('.header');
+
+mobileNavToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  header.classList.toggle('mobile-nav-active');
+
+  const isExpanded = navLinks.classList.contains('active');
+  mobileNavToggle.setAttribute('aria-expanded', isExpanded);
+});
+
+</script>
+
+</body>
+</html>
